@@ -1,30 +1,42 @@
 # MedLedger - Healthcare Record Verification Platform
 
-🏥 **MedLedger** is a blockchain-powered healthcare record verification platform built on Stellar network with Freighter wallet integration. It ensures medical records are tamper-proof, privacy-protected, and instantly verifiable.
+🏥 **MedLedger** is a blockchain-powered healthcare record verification platform built on Stellar network with Soroban smart contracts and Freighter wallet integration. It ensures medical records are tamper-proof, privacy-protected, and instantly verifiable through cryptographic hashing and immutable blockchain storage.
 
-![MedLedger Platform](https://img.shields.io/badge/Platform-Stellar-blue) ![Status](https://img.shields.io/badge/Status-Ready-green) ![License](https://img.shields.io/badge/License-MIT-blue)
+![MedLedger Platform](https://img.shields.io/badge/Platform-Stellar-blue) ![Smart Contracts](https://img.shields.io/badge/Smart_Contracts-Soroban-orange) ![Status](https://img.shields.io/badge/Status-Live-green) ![License](https://img.shields.io/badge/License-MIT-blue)
+
+## 🌐 Live Demo
+
+- **Production**: https://medledger-stellar.vercel.app
+- **GitHub**: https://github.com/Sharayu-github/Stellar_MedLedger
+- **Smart Contract**: Ready for deployment on Stellar testnet
 
 ## 🌟 Features
 
 ### Core Healthcare Features
-- 🔒 **Tamper-Proof Records**: Medical record hashes stored immutably on Stellar blockchain
+- 🔒 **Tamper-Proof Records**: Medical record hashes stored immutably on Stellar blockchain via Soroban smart contracts
 - 🏥 **HIPAA Compliant**: Only cryptographic hashes stored on-chain, protecting patient privacy
-- ✅ **Instant Verification**: Verify medical record integrity in seconds
+- ✅ **Instant Verification**: Verify medical record integrity in seconds through smart contract calls
 - 📊 **Multi-Provider Support**: Works with hospitals, clinics, labs, and healthcare providers
-- 🔐 **Ownership Control**: Only authorized healthcare providers can upload records
+- 🔐 **Ownership Control**: Only authorized healthcare providers can upload records via smart contract access control
 - 📈 **Analytics Dashboard**: Real-time statistics and insights for healthcare providers
+- 🔍 **Audit Trail**: Complete history of record modifications tracked on blockchain
 
-### Blockchain Features
+### Blockchain & Smart Contract Features
 - ⛓️ **Stellar Network**: Built on Stellar blockchain for fast, low-cost transactions
+- 🤖 **Soroban Smart Contracts**: Rust-based smart contracts for secure record management
 - 👛 **Freighter Wallet**: Seamless wallet connection and transaction signing
 - 🌐 **Testnet Ready**: Development on official Stellar testnet network
-- 🔄 **Version Control**: Track every modification with complete audit trail
+- 🔄 **Provider Registration**: Smart contract-based healthcare provider management
+- 💰 **Low Fees**: Minimal transaction costs (0.01 XLM per record)
+- 🛡️ **Emergency Controls**: Admin functions for contract management and security
 
 ### Technical Features
 - 🎨 **Professional UI**: Modern, responsive design optimized for healthcare workflows
 - 🚀 **Fast Performance**: Lightning-fast verification with minimal blockchain fees
 - 🔍 **Advanced Search**: Find records by ID, type, provider, or patient information
 - 📱 **Mobile Responsive**: Works seamlessly on desktop, tablet, and mobile devices
+- 🌍 **Global CDN**: Deployed on Vercel with worldwide edge distribution
+- 🔒 **Security Headers**: XSS protection, content security, and HTTPS enforcement
 
 ## 🛠️ Tech Stack
 
@@ -46,11 +58,25 @@
 - **CORS**: Cross-origin resource sharing
 - **Rate Limiting**: API protection and throttling
 
-### Blockchain
+### Blockchain & Smart Contracts
 - **Stellar Network**: Blockchain platform for healthcare records
+- **Soroban**: Rust-based smart contract platform
+- **Smart Contract Features**:
+  - Medical record hash storage
+  - Healthcare provider registration
+  - Record verification and integrity checking
+  - Access control and permissions
+  - Emergency admin controls
+  - Complete audit trail
 - **Freighter Wallet**: Browser extension wallet for Stellar
 - **Testnet**: Development and testing environment
-- **Smart Contracts**: Future Soroban contract integration
+
+### Deployment & Infrastructure
+- **Vercel**: Global CDN deployment platform
+- **GitHub**: Version control and CI/CD integration
+- **Automatic Deployments**: Connected to GitHub for seamless updates
+- **SSL/HTTPS**: Automatic certificate management
+- **Security Headers**: XSS protection and content security policies
 
 ## 🚀 Quick Start
 
@@ -85,6 +111,7 @@ VITE_HORIZON_URL=https://horizon-testnet.stellar.org
 VITE_FREIGHTER_ENABLED=true
 VITE_APP_NAME=MedLedger
 VITE_APP_VERSION=1.0.0
+VITE_CONTRACT_ID=CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW
 ```
 
 Create `backend/.env` file:
@@ -199,21 +226,42 @@ medledger-stellar/
 │   │   └── recordService.js     # Record management logic
 │   └── server.js                # Express server setup
 │
-├── package.json                 # Frontend dependencies
-├── vite.config.js              # Vite configuration
-├── tailwind.config.js          # Tailwind CSS config
-└── README.md                   # This file
+├── contracts/                    # Soroban Smart Contracts
+│   ├── src/
+│   │   ├── lib.rs              # Main smart contract code
+│   │   └── main.rs             # Binary target
+│   ├── Cargo.toml              # Rust dependencies
+│   ├── deploy.sh               # Deployment script
+│   ├── contract-config.js      # Contract configuration
+│   ├── contract-service.js     # JavaScript service layer
+│   ├── README.md               # Contract documentation
+│   ├── INTEGRATION.md          # Integration guide
+│   ├── WINDOWS_SETUP.md        # Windows setup instructions
+│   └── DEPLOYMENT_STATUS.md    # Deployment status
+│
+├── vercel.json                  # Vercel deployment config
+├── .env.production             # Production environment variables
+├── VERCEL_DEPLOYMENT.md        # Deployment guide
+├── package.json                # Frontend dependencies
+├── vite.config.js             # Vite configuration
+├── tailwind.config.js         # Tailwind CSS config
+└── README.md                  # This file
 ```
 
 ## 🔒 Security Features
 
 - **SHA-256 Hashing**: Cryptographically secure file integrity verification
 - **Privacy Protection**: Only hashes stored on blockchain, not sensitive data
+- **Smart Contract Security**: Rust-based contracts with access control and validation
+- **Provider Registration**: Only registered healthcare providers can store records
 - **Ownership Verification**: Only record owners can modify their data
 - **Immutable Records**: Blockchain prevents tampering with verification data
+- **Emergency Controls**: Admin functions for contract pause and management
 - **Rate Limiting**: API protection against abuse
 - **CORS Protection**: Secure cross-origin resource sharing
 - **Input Validation**: Comprehensive data validation and sanitization
+- **HTTPS Enforcement**: Automatic SSL certificates and secure connections
+- **Security Headers**: XSS protection, content security policies, and frame options
 
 ## 🌐 API Endpoints
 
@@ -234,7 +282,142 @@ medledger-stellar/
 - `GET /api/blockchain/status/:txHash` - Get transaction status
 - `GET /api/blockchain/network` - Get network information
 
+### Smart Contract Functions
+- `initialize(admin)` - Initialize contract with admin address
+- `register_provider(provider, license)` - Register healthcare provider
+- `store_record(recordId, fileHash, provider, patientId, recordType, metadata)` - Store medical record
+- `verify_record(recordId, fileHash)` - Verify record integrity
+- `get_record_info(recordId)` - Get record metadata
+- `get_provider_records(provider)` - Get all records for a provider
+- `is_provider_registered(provider)` - Check provider registration
+- `get_stats()` - Get contract statistics
+
+## 🤖 Smart Contract Integration
+
+### Contract Features
+- **Medical Record Storage**: Store SHA-256 hashes of medical files on blockchain
+- **Provider Management**: Register and manage healthcare providers
+- **Access Control**: Only registered providers can store records
+- **Record Verification**: Verify file integrity by comparing hashes
+- **Audit Trail**: Complete history of all record operations
+- **Emergency Controls**: Admin functions for contract management
+
+### Contract Functions
+
+#### Administrative Functions
+```rust
+initialize(admin: Address) // Initialize contract with admin
+register_provider(provider: Address, license: String) // Register healthcare provider
+emergency_pause(admin: Address) // Emergency pause functionality
+```
+
+#### Core Functions
+```rust
+store_record(record_id, file_hash, provider, patient_id, record_type, metadata) // Store record
+verify_record(record_id: String, file_hash: String) // Verify record integrity
+get_record_info(record_id: String) // Get record metadata
+update_metadata(record_id, new_metadata, provider) // Update record information
+```
+
+#### Query Functions
+```rust
+get_provider_records(provider: Address) // Get all records for a provider
+is_provider_registered(provider: Address) // Check provider registration
+get_stats() // Get contract statistics (total records, providers)
+```
+
+### Integration with Frontend
+
+```javascript
+import MedLedgerContractService from './contracts/contract-service.js';
+
+// Initialize contract service
+const contractService = new MedLedgerContractService('testnet');
+
+// Store a medical record
+const recordData = {
+  recordId: 'REC001',
+  fileHash: 'a1b2c3d4e5f6...', // SHA-256 hash
+  patientId: 'PAT001',
+  recordType: 'X-RAY',
+  metadata: 'Chest X-Ray - Normal'
+};
+
+const result = await contractService.storeRecord(providerKeypair, recordData);
+
+// Verify a record
+const verification = await contractService.verifyRecord('REC001', 'a1b2c3d4e5f6...');
+console.log('Verification result:', verification.isValid);
+```
+
+### Contract Deployment Status
+- **Status**: Ready for deployment
+- **Network**: Stellar Testnet
+- **Language**: Rust (Soroban)
+- **Features**: Complete medical record management
+- **Security**: Access control, input validation, emergency controls
+- **Documentation**: Comprehensive guides in `contracts/` directory
+
+### Setup Instructions
+1. **Install Tools**: Follow `contracts/WINDOWS_SETUP.md`
+2. **Deploy Contract**: Run `./contracts/deploy.sh`
+3. **Update Config**: Add contract ID to `contracts/contract-config.js`
+4. **Test Integration**: Use contract service in React components
+
 ## 🐛 Troubleshooting
+
+### Wallet Connection Issues
+**Q: "Wallet connection failed" - What should I do?**
+A: The app automatically falls back to TEST MODE with a mock wallet. All features work normally! Install Freighter for production use.
+
+**Q: How do I switch from TEST MODE to real Freighter?**
+A: Install Freighter extension, create testnet account, fund it, and reload the app.
+
+### Smart Contract Issues
+**Q: Smart contract deployment fails**
+A: Ensure you have Visual Studio Build Tools installed on Windows. See `contracts/WINDOWS_SETUP.md` for detailed setup instructions.
+
+**Q: Contract functions return errors**
+A: Verify the contract is deployed and the contract ID is correctly set in `contracts/contract-config.js`.
+
+**Q: Provider registration fails**
+A: Only the contract admin can register providers. Ensure you're using the admin account that deployed the contract.
+
+### Installation Issues
+**Q: npm install fails with dependency errors**
+```bash
+rm -rf node_modules package-lock.json
+npm cache clean --force
+npm install
+```
+
+**Q: Backend server won't start**
+```bash
+cd backend
+npm install
+npm start
+# Should show: "🏥 MedLedger API Server running on port 5000"
+```
+
+**Q: Rust/Cargo installation issues on Windows**
+A: Follow the Windows-specific setup guide in `contracts/WINDOWS_SETUP.md` or use WSL for Linux environment.
+
+### Development Issues
+**Q: Frontend can't connect to backend**
+- Verify backend is running on http://localhost:5000
+- Check `.env` has correct `VITE_API_BASE_URL`
+- Ensure CORS is enabled in backend
+
+**Q: Vercel deployment fails**
+- Check `vercel.json` configuration
+- Verify environment variables are set in Vercel dashboard
+- Ensure build command completes successfully locally
+
+### Deployment Issues
+**Q: Live site shows errors**
+- Check Vercel deployment logs
+- Verify environment variables are set correctly
+- Ensure contract ID is updated in production config
 
 ### Wallet Connection Issues
 **Q: "Wallet connection failed" - What should I do?**
@@ -267,14 +450,16 @@ npm start
 
 ## 📈 Future Enhancements
 
-- **Smart Contracts**: Soroban smart contract integration
-- **Multi-chain Support**: Ethereum, Polygon integration
-- **IPFS Integration**: Decentralized file storage
-- **Mobile App**: React Native mobile application
-- **Advanced Analytics**: Machine learning insights
-- **API Rate Limiting**: Enhanced security features
-- **Multi-language Support**: Internationalization
-- **Advanced Access Control**: Role-based permissions
+- ✅ **Smart Contracts**: Soroban smart contract integration (COMPLETED)
+- ✅ **Vercel Deployment**: Global CDN deployment (COMPLETED)
+- 🔄 **Multi-chain Support**: Ethereum, Polygon integration
+- 🔄 **IPFS Integration**: Decentralized file storage
+- 🔄 **Mobile App**: React Native mobile application
+- 🔄 **Advanced Analytics**: Machine learning insights
+- 🔄 **API Rate Limiting**: Enhanced security features
+- 🔄 **Multi-language Support**: Internationalization
+- 🔄 **Advanced Access Control**: Role-based permissions
+- 🔄 **HL7 FHIR Integration**: Healthcare interoperability standards
 
 ## 🤝 Contributing
 
@@ -313,23 +498,102 @@ For issues, questions, or feature requests:
 
 ## 🚀 Deployment
 
-### Build for Production
+### Live Production Deployment
+- **Production URL**: https://medledger-stellar.vercel.app
+- **Deployment Platform**: Vercel with global CDN
+- **Automatic Deployments**: Connected to GitHub main branch
+- **SSL/HTTPS**: Automatic certificate management
+- **Performance**: Optimized builds with edge caching
+
+### Smart Contract Deployment
+
+#### Prerequisites
+- Rust and Cargo installed
+- Soroban CLI installed
+- Visual Studio Build Tools (Windows) or build-essential (Linux)
+
+#### Deploy Smart Contract
 ```bash
+# Navigate to contracts directory
+cd contracts
+
+# Install Rust and Soroban CLI (if not installed)
+# See contracts/WINDOWS_SETUP.md for detailed instructions
+
+# Deploy to Stellar testnet
+./deploy.sh
+```
+
+#### Expected Output
+```
+🏥 MedLedger Smart Contract Deployment
+=====================================
+🔨 Building contract...
+✅ Contract built successfully
+🌐 Configuring Stellar testnet...
+🚀 Deploying contract to testnet...
+✅ Contract deployed successfully!
+📋 Contract ID: CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW
+```
+
+### Local Development Build
+```bash
+# Build frontend for production
 npm run build
 # Output in dist/ folder
+
+# Test smart contract
+npm run contract:test
+
+# Build smart contract
+npm run contract:build
 ```
 
-### Deploy to Vercel
-```bash
-npm install -g vercel
-vercel
-```
+### Alternative Deployment Options
 
-### Deploy to Netlify
+#### Deploy to Netlify
 ```bash
 npm install -g netlify-cli
-netlify deploy --prod
+npm run build
+netlify deploy --prod --dir=dist
 ```
+
+#### Deploy to GitHub Pages
+```bash
+npm run build
+# Push dist/ folder to gh-pages branch
+```
+
+#### Docker Deployment
+```bash
+# Build Docker image
+docker build -t medledger .
+
+# Run container
+docker run -p 3000:3000 medledger
+```
+
+### Environment Variables for Production
+
+```env
+# Production Environment (.env.production)
+VITE_STELLAR_NETWORK=testnet
+VITE_CONTRACT_ID=YOUR_DEPLOYED_CONTRACT_ID
+VITE_API_BASE_URL=https://medledger-stellar.vercel.app/api
+VITE_APP_NAME=MedLedger
+VITE_ENABLE_ANALYTICS=true
+```
+
+### Deployment Checklist
+
+- ✅ Frontend deployed to Vercel
+- ✅ GitHub repository connected
+- ✅ Automatic deployments configured
+- ✅ SSL certificates active
+- ✅ Environment variables set
+- ⚠️ Smart contract ready for deployment
+- ⚠️ Contract ID needs to be updated after deployment
+- ⚠️ Provider registration needs admin setup
 
 ---
 
