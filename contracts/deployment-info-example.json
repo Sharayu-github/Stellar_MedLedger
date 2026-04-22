@@ -1,0 +1,32 @@
+{
+  "contractId": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW",
+  "network": "testnet",
+  "adminAddress": "GAIUIZPHLIHQEMNJGSZKCEKCWYCM2CXWC6LFZQ6KZFXBQY2HNXND2JKL",
+  "deployedAt": "2026-04-22T10:30:00Z",
+  "rpcUrl": "https://soroban-testnet.stellar.org:443",
+  "networkPassphrase": "Test SDF Network ; September 2015",
+  "deploymentStatus": "success",
+  "testResults": {
+    "providerRegistration": "passed",
+    "recordStorage": "passed",
+    "recordVerification": "passed"
+  },
+  "contractFunctions": [
+    "initialize",
+    "register_provider",
+    "store_record",
+    "verify_record",
+    "get_record_info",
+    "get_provider_records",
+    "is_provider_registered",
+    "get_stats",
+    "update_metadata",
+    "emergency_pause"
+  ],
+  "estimatedCosts": {
+    "deployment": "0.5 XLM",
+    "initialization": "0.01 XLM",
+    "storeRecord": "0.01 XLM per record",
+    "verifyRecord": "0.001 XLM per verification"
+  }
+}

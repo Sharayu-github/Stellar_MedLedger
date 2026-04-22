@@ -11,7 +11,11 @@
     "preview": "vite preview",
     "install-all": "npm install && cd backend && npm install",
     "start": "npm run dev",
-    "test": "echo \"Tests will be added in future versions\" && exit 0"
+    "test": "echo \"Tests will be added in future versions\" && exit 0",
+    "contract:build": "cd contracts && cargo build --target wasm32-unknown-unknown --release",
+    "contract:test": "cd contracts && cargo test",
+    "contract:deploy": "cd contracts && ./deploy.sh",
+    "contract:test-js": "cd contracts && node test-contract.js"
   },
   "dependencies": {
     "react": "^18.2.0",
