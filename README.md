@@ -8,7 +8,28 @@
 
 - **Production**: https://medledger-stellar.vercel.app
 - **GitHub**: https://github.com/Sharayu-github/Stellar_MedLedger
-- **Smart Contract**: Ready for deployment on Stellar testnet
+- **Smart Contract**: `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW`
+- **Contract Explorer**: https://stellar.expert/explorer/testnet/contract/CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW
+- **Stellar Laboratory**: https://laboratory.stellar.org/#explorer?resource=contracts&endpoint=single&network=test&values=eyJjb250cmFjdElkIjoiQ0RMWkZDM1NZSllEWlQ3SzY3Vlo3NUhQSlZJRVVWTklYRjQ3SEg2WEg2WE02SVAzMkxKTlZLRVcifQ%3D%3D
+
+## 🔗 Quick Links
+
+### Application
+- **Live Demo**: https://medledger-stellar.vercel.app
+- **GitHub Repository**: https://github.com/Sharayu-github/Stellar_MedLedger
+- **Vercel Dashboard**: https://vercel.com/deogaonkarsharayu-4848s-projects/medledger-stellar
+
+### Smart Contract
+- **Contract ID**: `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW`
+- **Stellar Expert**: https://stellar.expert/explorer/testnet/contract/CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW
+- **Stellar Laboratory**: https://laboratory.stellar.org/#explorer?resource=contracts&endpoint=single&network=test
+- **Contract Source Code**: [contracts/src/lib.rs](contracts/src/lib.rs)
+
+### Documentation
+- **Contract Documentation**: [contracts/README.md](contracts/README.md)
+- **Integration Guide**: [contracts/INTEGRATION.md](contracts/INTEGRATION.md)
+- **Windows Setup**: [contracts/WINDOWS_SETUP.md](contracts/WINDOWS_SETUP.md)
+- **Deployment Guide**: [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md)
 
 ## 🌟 Features
 
@@ -351,12 +372,19 @@ console.log('Verification result:', verification.isValid);
 ```
 
 ### Contract Deployment Status
-- **Status**: Ready for deployment
+- **Status**: Deployed on Stellar Testnet
+- **Contract ID**: `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW`
 - **Network**: Stellar Testnet
 - **Language**: Rust (Soroban)
 - **Features**: Complete medical record management
 - **Security**: Access control, input validation, emergency controls
 - **Documentation**: Comprehensive guides in `contracts/` directory
+
+### Contract Links
+- **Stellar Expert**: https://stellar.expert/explorer/testnet/contract/CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW
+- **Stellar Laboratory**: https://laboratory.stellar.org/#explorer?resource=contracts&endpoint=single&network=test
+- **Soroban RPC**: https://soroban-testnet.stellar.org:443
+- **Contract Source**: [contracts/src/lib.rs](contracts/src/lib.rs)
 
 ### Setup Instructions
 1. **Install Tools**: Follow `contracts/WINDOWS_SETUP.md`
@@ -507,33 +535,23 @@ For issues, questions, or feature requests:
 
 ### Smart Contract Deployment
 
-#### Prerequisites
-- Rust and Cargo installed
-- Soroban CLI installed
-- Visual Studio Build Tools (Windows) or build-essential (Linux)
+#### Contract Information
+- **Contract ID**: `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW`
+- **Network**: Stellar Testnet
+- **Status**: ✅ Deployed and Active
+- **Explorer**: https://stellar.expert/explorer/testnet/contract/CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47H6XH6XM6IP32LJNVKEW
 
-#### Deploy Smart Contract
+#### Interact with Contract
 ```bash
-# Navigate to contracts directory
-cd contracts
+# Using Stellar CLI
+stellar contract invoke \
+  --id CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW \
+  --source-account YOUR_ACCOUNT \
+  --network testnet \
+  -- get_stats
 
-# Install Rust and Soroban CLI (if not installed)
-# See contracts/WINDOWS_SETUP.md for detailed instructions
-
-# Deploy to Stellar testnet
-./deploy.sh
-```
-
-#### Expected Output
-```
-🏥 MedLedger Smart Contract Deployment
-=====================================
-🔨 Building contract...
-✅ Contract built successfully
-🌐 Configuring Stellar testnet...
-🚀 Deploying contract to testnet...
-✅ Contract deployed successfully!
-📋 Contract ID: CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47HH6XH6XM6IP32LJNVKEW
+# View contract in Stellar Laboratory
+# Visit: https://laboratory.stellar.org/#explorer?resource=contracts&endpoint=single&network=test
 ```
 
 ### Local Development Build
@@ -591,9 +609,10 @@ VITE_ENABLE_ANALYTICS=true
 - ✅ Automatic deployments configured
 - ✅ SSL certificates active
 - ✅ Environment variables set
-- ⚠️ Smart contract ready for deployment
-- ⚠️ Contract ID needs to be updated after deployment
+- ✅ Smart contract deployed to Stellar testnet
+- ✅ Contract ID configured in application
 - ⚠️ Provider registration needs admin setup
+- ⚠️ Production testing required
 
 ---
 
